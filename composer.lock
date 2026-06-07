@@ -4,8 +4,144 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea546aab178297137707fa545cb79e69",
+    "content-hash": "818e03537a49b0e7f2e572644676e5ae",
     "packages": [
+        {
+            "name": "bacon/bacon-qr-code",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bacon/BaconQrCode.git",
+                "reference": "4da2233e72eeecd9be3b62e0dc2cc9ed8e2e31c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/4da2233e72eeecd9be3b62e0dc2cc9ed8e2e31c2",
+                "reference": "4da2233e72eeecd9be3b62e0dc2cc9ed8e2e31c2",
+                "shasum": ""
+            },
+            "require": {
+                "dasprid/enum": "^1.0.3",
+                "ext-iconv": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phly/keep-a-changelog": "^2.12",
+                "phpunit/phpunit": "^10.5.11 || ^11.0.4",
+                "spatie/phpunit-snapshot-assertions": "^5.1.5",
+                "spatie/pixelmatch-php": "^1.2.0",
+                "squizlabs/php_codesniffer": "^3.9"
+            },
+            "suggest": {
+                "ext-imagick": "to generate QR code images"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BaconQrCode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "https://dasprids.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BaconQrCode is a QR code generator for PHP.",
+            "homepage": "https://github.com/Bacon/BaconQrCode",
+            "support": {
+                "issues": "https://github.com/Bacon/BaconQrCode/issues",
+                "source": "https://github.com/Bacon/BaconQrCode/tree/v3.1.1"
+            },
+            "time": "2026-04-05T21:06:35+00:00"
+        },
+        {
+            "name": "blade-ui-kit/blade-icons",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/driesvints/blade-icons.git",
+                "reference": "74189a80bbaa4966aebaee54fec3a3c2ef0a5f3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/driesvints/blade-icons/zipball/74189a80bbaa4966aebaee54fec3a3c2ef0a5f3a",
+                "reference": "74189a80bbaa4966aebaee54fec3a3c2ef0a5f3a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "illuminate/filesystem": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "illuminate/view": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^7.4|^8.0",
+                "symfony/console": "^5.3|^6.0|^7.0|^8.0",
+                "symfony/finder": "^5.3|^6.0|^7.0|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5.1",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0"
+            },
+            "bin": [
+                "bin/blade-icons-generate"
+            ],
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUI\\Icons\\BladeIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "BladeUI\\Icons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of icons in your Laravel Blade views.",
+            "homepage": "https://github.com/driesvints/blade-icons",
+            "keywords": [
+                "blade",
+                "icons",
+                "laravel",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/driesvints/blade-icons/issues",
+                "source": "https://github.com/driesvints/blade-icons"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/driesvints",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.paypal.com/paypalme/driesvints",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2026-04-23T19:03:45+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.14.8",
@@ -134,6 +270,199 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "codeat3/blade-clarity-icons",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeat3/blade-clarity-icons.git",
+                "reference": "3305a398f9d901c97aefd4bfde29e194728b7a1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeat3/blade-clarity-icons/zipball/3305a398f9d901c97aefd4bfde29e194728b7a1a",
+                "reference": "3305a398f9d901c97aefd4bfde29e194728b7a1a",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.1",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "codeat3/blade-icon-generation-helpers": "^0.12",
+                "codeat3/phpcs-styles": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codeat3\\BladeClarityIcons\\BladeClarityIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codeat3\\BladeClarityIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Swapnil Sarwe",
+                    "homepage": "https://swapnilsarwe.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of Clarity Icons in your Laravel Blade views.",
+            "homepage": "https://github.com/codeat3/blade-clarity-icons",
+            "keywords": [
+                "blade",
+                "clarity",
+                "icons",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/codeat3/blade-clarity-icons/issues",
+                "source": "https://github.com/codeat3/blade-clarity-icons/tree/1.11.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/swapnilsarwe",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-21T12:02:20+00:00"
+        },
+        {
+            "name": "codeat3/blade-phosphor-icons",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeat3/blade-phosphor-icons.git",
+                "reference": "39a40c44908729d20f03f9903f4abcc165b1b02b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeat3/blade-phosphor-icons/zipball/39a40c44908729d20f03f9903f4abcc165b1b02b",
+                "reference": "39a40c44908729d20f03f9903f4abcc165b1b02b",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.1",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "codeat3/blade-icon-generation-helpers": "^0.12",
+                "codeat3/phpcs-styles": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codeat3\\BladePhosphorIcons\\BladePhosphorIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codeat3\\BladePhosphorIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Swapnil Sarwe",
+                    "homepage": "https://swapnilsarwe.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of \"Phosphor Icons\" in your Laravel Blade views.",
+            "homepage": "https://github.com/codeat3/blade-phosphor-icons",
+            "keywords": [
+                "blade",
+                "laravel",
+                "phosphor-icons"
+            ],
+            "support": {
+                "issues": "https://github.com/codeat3/blade-phosphor-icons/issues",
+                "source": "https://github.com/codeat3/blade-phosphor-icons/tree/2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/swapnilsarwe",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-21T13:21:02+00:00"
+        },
+        {
+            "name": "dasprid/enum",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DASPRiD/Enum.git",
+                "reference": "b5874fa9ed0043116c72162ec7f4fb50e02e7cce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DASPRiD/Enum/zipball/b5874fa9ed0043116c72162ec7f4fb50e02e7cce",
+                "reference": "b5874fa9ed0043116c72162ec7f4fb50e02e7cce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1 <9.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7 || ^8 || ^9 || ^10 || ^11",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DASPRiD\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "https://dasprids.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP 7.1 enum implementation",
+            "keywords": [
+                "enum",
+                "map"
+            ],
+            "support": {
+                "issues": "https://github.com/DASPRiD/Enum/issues",
+                "source": "https://github.com/DASPRiD/Enum/tree/1.0.7"
+            },
+            "time": "2025-09-16T12:23:56+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2031,6 +2360,82 @@
             "time": "2026-03-08T20:05:35+00:00"
         },
         {
+            "name": "livewire/livewire",
+            "version": "v4.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/livewire/livewire.git",
+                "reference": "6a9dd03f45a4b200abfd0ff644745b23fa7baaaa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/6a9dd03f45a4b200abfd0ff644745b23fa7baaaa",
+                "reference": "6a9dd03f45a4b200abfd0ff644745b23fa7baaaa",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/routing": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/validation": "^10.0|^11.0|^12.0|^13.0",
+                "laravel/prompts": "^0.1.24|^0.2|^0.3",
+                "league/mime-type-detection": "^1.9",
+                "php": "^8.1",
+                "symfony/console": "^6.0|^7.0|^8.0",
+                "symfony/http-kernel": "^6.2|^7.0|^8.0"
+            },
+            "require-dev": {
+                "calebporzio/sushi": "^2.1",
+                "laravel/framework": "^10.15.0|^11.0|^12.0|^13.0",
+                "mockery/mockery": "^1.3.1",
+                "orchestra/testbench": "^8.21.0|^9.0|^10.0|^11.0",
+                "orchestra/testbench-dusk": "^8.24|^9.1|^10.0|^11.0",
+                "phpunit/phpunit": "^10.4|^11.5|^12.5",
+                "psy/psysh": "^0.11.22|^0.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Livewire": "Livewire\\Livewire"
+                    },
+                    "providers": [
+                        "Livewire\\LivewireServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Livewire\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "A front-end framework for Laravel.",
+            "support": {
+                "issues": "https://github.com/livewire/livewire/issues",
+                "source": "https://github.com/livewire/livewire/tree/v4.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/livewire",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-06-02T08:58:52+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.10.0",
             "source": {
@@ -2540,6 +2945,117 @@
                 }
             ],
             "time": "2026-02-16T23:10:27+00:00"
+        },
+        {
+            "name": "paul-adams-985/anygoodie-core",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paul-adams-985/anygoodie-core.git",
+                "reference": "5a7e90c4241d6071171d07622de5f27b4b669d12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paul-adams-985/anygoodie-core/zipball/5a7e90c4241d6071171d07622de5f27b4b669d12",
+                "reference": "5a7e90c4241d6071171d07622de5f27b4b669d12",
+                "shasum": ""
+            },
+            "require": {
+                "bacon/bacon-qr-code": "^3.1",
+                "blade-ui-kit/blade-icons": "^1.10",
+                "codeat3/blade-clarity-icons": "^1.11",
+                "codeat3/blade-phosphor-icons": "^2.4",
+                "illuminate/contracts": "^13.0",
+                "livewire/livewire": "^4.3",
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.93"
+            },
+            "require-dev": {
+                "driftingly/rector-laravel": "^2.4",
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.29",
+                "nunomaduro/collision": "^8.9",
+                "orchestra/testbench": "^11.0",
+                "pestphp/pest": "^4.0",
+                "pestphp/pest-plugin-arch": "^4.0",
+                "pestphp/pest-plugin-laravel": "^4.0",
+                "pestphp/pest-plugin-type-coverage": "^4.0",
+                "rector/rector": "^2.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PaulAdams985\\Core\\CoreServiceProvider"
+                    ],
+                    "aliases": {
+                        "Core": "PaulAdams985\\Core\\Facades\\Core"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PaulAdams985\\Core\\": "src/",
+                    "PaulAdams985\\Core\\Database\\Factories\\": "database/factories/",
+                    "PaulAdams985\\Core\\Database\\Seeders\\": "database/seeders/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "PaulAdams985\\Core\\Tests\\": "tests/",
+                    "Workbench\\App\\": "workbench/app/",
+                    "App\\": "tests/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "@composer run prepare"
+                ],
+                "prepare": [
+                    "@php vendor/bin/testbench package:discover --ansi"
+                ],
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest --parallel"
+                ],
+                "test-coverage": [
+                    "php -d xdebug.mode=coverage vendor/bin/pest --coverage"
+                ],
+                "test:type-coverage": [
+                    "php -d xdebug.mode=off vendor/bin/pest --type-coverage --min=100"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ],
+                "lint": [
+                    "vendor/bin/rector process",
+                    "vendor/bin/pint --parallel",
+                    "vendor/bin/phpstan analyse"
+                ]
+            },
+            "license": [
+                "None"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Adams",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Common anygoodie classes",
+            "homepage": "https://github.com/paul-adams-985/anygoodie-core",
+            "keywords": [
+                "Paul Adams",
+                "anygoodie-core",
+                "laravel"
+            ],
+            "time": "2026-06-05T10:13:00+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -3304,6 +3820,67 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.2"
             },
             "time": "2025-12-14T04:43:48+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.93.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "d5552849801f2642aea710557463234b59ef65eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/d5552849801f2642aea710557463234b59ef65eb",
+                "reference": "d5552849801f2642aea710557463234b59ef65eb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^8.0|^9.2|^10.0|^11.0",
+                "pestphp/pest": "^2.1|^3.1|^4.0",
+                "phpunit/php-code-coverage": "^10.0|^11.0|^12.0",
+                "phpunit/phpunit": "^10.5|^11.5|^12.5",
+                "spatie/pest-plugin-test-time": "^2.2|^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.93.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-05-19T14:06:37+00:00"
         },
         {
             "name": "symfony/clock",
@@ -9782,7 +10359,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "paul-adams-985/anygoodie-core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -8,10 +8,17 @@
         "framework"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/paul-adams-985/anygoodie-core.git"
+        }
+    ],
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.8",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "paul-adams-985/anygoodie-core": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
