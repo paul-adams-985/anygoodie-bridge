@@ -29,11 +29,8 @@ describe('assetlinks.json', function (): void {
             ->assertJsonPath('0.target.package_name', 'com.example.test');
     });
 
-    it('filters null fingerprints and reindexes', function (): void {
-        config([
-            'well-known.android.cert_fingerprint' => null,
-            'well-known.android.play_signing_cert_fingerprint' => 'AA:BB:CC',
-        ]);
+    it('uses configured play signing cert fingerprint', function (): void {
+        config(['well-known.android.play_signing_cert_fingerprint' => 'AA:BB:CC']);
 
         $fingerprints = $this->getJson('/.well-known/assetlinks.json')
             ->json('0.target.sha256_cert_fingerprints');
@@ -41,16 +38,13 @@ describe('assetlinks.json', function (): void {
         expect($fingerprints)->toBe(['AA:BB:CC']);
     });
 
-    it('includes both fingerprints when both set', function (): void {
-        config([
-            'well-known.android.cert_fingerprint' => 'AA:BB:CC',
-            'well-known.android.play_signing_cert_fingerprint' => 'DD:EE:FF',
-        ]);
+    it('filters out fingerprint when not configured', function (): void {
+        config(['well-known.android.play_signing_cert_fingerprint' => null]);
 
         $fingerprints = $this->getJson('/.well-known/assetlinks.json')
             ->json('0.target.sha256_cert_fingerprints');
 
-        expect($fingerprints)->toBe(['AA:BB:CC', 'DD:EE:FF']);
+        expect($fingerprints)->toBe([]);
     });
 });
 

@@ -23,14 +23,13 @@ return [
     |--------------------------------------------------------------------------
     |
     | Configuration for the /.well-known/assetlinks.json file, which proves
-    | domain ownership to Android. Add both your upload key fingerprint and
-    | Google's app signing key fingerprint when using Play App Signing.
+    | domain ownership to Android. Uses Google's Play App Signing key
+    | fingerprint, which signs the app as distributed to users.
     |
     */
 
     'android' => [
         'package_name' => env('ANDROID_PACKAGE_NAME', 'com.anygoodie.app'),
-        'cert_fingerprint' => env('ANDROID_CERT_FINGERPRINT'),
         'play_signing_cert_fingerprint' => env('ANDROID_PLAY_SIGNING_CERT_FINGERPRINT'),
     ],
 
