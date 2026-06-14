@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 use PaulAdams985\Core\Types\Tenant;
 
@@ -14,7 +15,9 @@ class RecipientController extends Controller
     {
         $endpoint = Tenant::from($tenant)->endpoint();
 
-        return redirect()->away($endpoint.request()->getRequestUri());
+        $path = Str::replaceFirst('/recipient', '/recipient-inbound', request()->getRequestUri());
+
+        return redirect()->away($endpoint.$path);
     }
 
     public function show(string $tenant, string $recipient_voucher): View
