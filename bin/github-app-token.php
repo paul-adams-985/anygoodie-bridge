@@ -5,12 +5,16 @@
  * Composer auth. Runs standalone (no framework bootstrap) so it works
  * before `composer install` has produced a vendor/autoload.php.
  *
- * Requires GITHUB_APP_ID, GITHUB_APP_INSTALLATION_ID, GITHUB_APP_PRIVATE_KEY
- * (PEM, base64-encoded to survive env var storage) in the environment.
+ * Laravel Cloud's build command does not export environment variables into
+ * the shell — it textually substitutes `$VARNAME` references written
+ * literally in the build command before running it. So the app ID,
+ * installation ID, and base64-encoded PEM private key must be passed as
+ * explicit CLI arguments (each referenced literally in the build command)
+ * rather than read via getenv().
  *
  * Outputs the token to stdout only — used via command substitution in the
  * Cloud build command, e.g.:
- *   composer config http-basic.github.com x-access-token $(php bin/github-app-token.php)
+ *   composer config http-basic.github.com x-access-token $(php bin/github-app-token.php "$GITHUB_APP_ID" "$GITHUB_APP_INSTALLATION_ID" "$GITHUB_APP_PRIVATE_KEY")
  */
 
 function fail(string $message): never
@@ -19,9 +23,11 @@ function fail(string $message): never
     exit(1);
 }
 
-$appId = getenv('GITHUB_APP_ID') ?: fail('GITHUB_APP_ID not set');
-$installationId = getenv('GITHUB_APP_INSTALLATION_ID') ?: fail('GITHUB_APP_INSTALLATION_ID not set');
-$encodedKey = getenv('GITHUB_APP_PRIVATE_KEY') ?: fail('GITHUB_APP_PRIVATE_KEY not set');
+[, $appId, $installationId, $encodedKey] = [...$argv, null, null, null];
+
+$appId ?: fail('Usage: github-app-token.php <app-id> <installation-id> <base64-private-key>');
+$installationId ?: fail('Usage: github-app-token.php <app-id> <installation-id> <base64-private-key>');
+$encodedKey ?: fail('Usage: github-app-token.php <app-id> <installation-id> <base64-private-key>');
 
 $privateKey = base64_decode($encodedKey, strict: true) ?: fail('GITHUB_APP_PRIVATE_KEY is not valid base64');
 
