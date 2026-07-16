@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,5 +39,11 @@ class AppServiceProvider extends ServiceProvider
         // route, that route would silently inherit this pass-through too.
         Route::bind('voucher_share', fn (string $value): string => $value);
         Route::bind('recipient_voucher', fn (string $value): string => $value);
+
+        RateLimiter::for('api-auth', function (Request $request) {
+            return app()->isProduction()
+                ? Limit::perMinute(10)->by($request->ip())
+                : Limit::none();
+        });
     }
 }

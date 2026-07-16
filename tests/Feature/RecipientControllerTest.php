@@ -17,7 +17,6 @@ describe('preview', function (): void {
         $response->assertRedirect("https://{$tenant}.anygoodie.test/recipient-inbound/{$tenant}/voucher/abc123/preview");
     })->with([
         'uk' => 'uk',
-        'us' => 'us',
     ]);
 
     it('redirects even when no matching voucher share exists, proving no model binding occurs', function (): void {

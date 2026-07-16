@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'tenant_lookup' => [
+        'secret' => env('TENANT_LOOKUP_SECRET'),
+    ],
+
 ];
