@@ -17,7 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Allow version check endpoint during maintenance mode
+        $middleware->preventRequestsDuringMaintenance(except: [
+            'api/v1/app/version',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

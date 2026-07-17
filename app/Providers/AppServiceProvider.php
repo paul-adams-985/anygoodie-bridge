@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\JsonApi\JsonApiResource;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Configure JSON:API version globally
+        JsonApiResource::configure(version: '1.0');
+
         // Override the core package's `Route::model` bindings (registered in
         // CoreServiceProvider): the recipient routes only ever forward the raw
         // identifier onward to the tenant, so resolving an Eloquent model for
@@ -43,6 +47,12 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('api-auth', function (Request $request) {
             return app()->isProduction()
                 ? Limit::perMinute(10)->by($request->ip())
+                : Limit::none();
+        });
+
+        RateLimiter::for('api-public', function (Request $request) {
+            return app()->isProduction()
+                ? Limit::perMinute(60)->by($request->ip())
                 : Limit::none();
         });
     }

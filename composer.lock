@@ -2954,12 +2954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/paul-adams-985/anygoodie-core.git",
-                "reference": "fd68b830c81ff7876a14b72541ed99334541839b"
+                "reference": "cdc7afb8c89085bc2443fd665784c2dd2d27f940"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paul-adams-985/anygoodie-core/zipball/fd68b830c81ff7876a14b72541ed99334541839b",
-                "reference": "fd68b830c81ff7876a14b72541ed99334541839b",
+                "url": "https://api.github.com/repos/paul-adams-985/anygoodie-core/zipball/cdc7afb8c89085bc2443fd665784c2dd2d27f940",
+                "reference": "cdc7afb8c89085bc2443fd665784c2dd2d27f940",
                 "shasum": ""
             },
             "require": {
@@ -3057,7 +3057,7 @@
                 "anygoodie-core",
                 "laravel"
             ],
-            "time": "2026-07-16T13:51:51+00:00"
+            "time": "2026-07-17T09:52:14+00:00"
         },
         {
             "name": "phpoption/phpoption",

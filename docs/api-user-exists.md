@@ -51,6 +51,8 @@ X-Tenant-Secret: <shared secret>
 
 ## Response
 
+This endpoint predates the app's JSON:API resource convention and returns a flat `data: {...}` object rather than `data.type`/`id`/`attributes`. See [api-app-version.md](api-app-version.md) for the newer JSON:API-shaped response — the two envelopes are intentionally inconsistent for now.
+
 ### 200 OK — found
 
 ```json
@@ -96,17 +98,14 @@ Missing or incorrect `X-Tenant-Secret` header.
 
 ### 422 Unprocessable Entity
 
+Standard Laravel validation error shape (not the JSON:API `errors[]` format used above for 401 — that shape is hand-crafted per-error and isn't applied to validation failures).
+
 ```json
 {
-  "errors": [
-    {
-      "status": "422",
-      "title": "Validation failed",
-      "detail": {
-        "email": ["Please provide a valid email address."]
-      }
-    }
-  ]
+  "message": "Please provide a valid email address.",
+  "errors": {
+    "email": ["Please provide a valid email address."]
+  }
 }
 ```
 
