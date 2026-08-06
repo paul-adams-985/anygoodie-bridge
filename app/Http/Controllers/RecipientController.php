@@ -26,4 +26,16 @@ class RecipientController extends Controller
     {
         return view('recipient.download-app');
     }
+
+    /**
+     * Hands the request on to the tenant's own application.
+     */
+    public function gift(string $tenant, string $recipient_voucher): RedirectResponse
+    {
+        $endpoint = Tenant::from($tenant)->endpoint();
+
+        $path = '/recipient-inbound'.request()->getRequestUri();
+
+        return redirect()->away($endpoint.$path);
+    }
 }
